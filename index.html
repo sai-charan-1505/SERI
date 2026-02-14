@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SERI</title>
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="app-shell">
+    <div class="card">
+
+        <div class="title-area">
+            <h1>SERI</h1>
+            <p>Speech Emotion Recognition Interface</p>
+        </div>
+
+        <div class="controls">
+            <button id="recordBtn">Start Recording</button>
+            <button id="stopBtn" disabled>Stop</button>
+        </div>
+
+        <div style="display: flex; width: 100%; justify-content: center; align-items: center; margin-bottom: 20px;">
+            <div style="display: flex; width: 100%; max-width: 150px;justify-content: end; align-items: center; padding: 0 10px; color: rgba(0,0,0, 0.3);">
+                <hr width="100%" style="border-color: rgba(0,0,0, 0.1);">
+            </div>
+            <p style="color: rgba(0,0,0, 0.3); font-size: 0.6rem; text-align: center; font-weight: 600; text-transform: uppercase;">or</p>
+            <div style="display: flex; width: 100%; max-width: 150px;justify-content: start; align-items: center; padding: 0 10px; color: rgba(0,0,0, 0.3);">
+                <hr width="100%" style="border-color: rgba(0,0,0, 0.1);">
+            </div>
+        </div>
+
+        <div class="controls">
+            <label class="upload">
+                Upload (.wav) Audio
+                <input type="file" id="fileInput" accept="audio/*">
+            </label>
+        </div>
+
+        <div class="title-area">
+            <p style="color: rgba(0,0,0, 0.3); font-size: 0.6rem;">If uploaded only <strong>.wav</strong> files are accepted</p>
+        </div>
+
+        <div class="status">
+            <div class="row">
+                <span class="label">Gate</span>
+                <span id="gateValue">-</span>
+            </div>
+            <div class="row">
+                <span class="label">Emotion</span>
+                <span id="emotionValue">-</span>
+            </div>
+            <div class="row">
+                <span class="label">Confidence</span>
+                <span id="confidenceValue">-</span>
+            </div>
+        </div>
+
+        <audio id="preview" controls></audio>
+        <div class="title-area">
+            <p style="color: rgba(0,0,0, 0.3); font-size: 0.6rem;">Recorded audio preview</p>
+        </div>
+
+    </div>
+</div>
+
+<script src="api.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
